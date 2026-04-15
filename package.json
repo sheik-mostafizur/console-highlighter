@@ -1,0 +1,66 @@
+{
+  "name": "my-console-highlighter",
+  "displayName": "My Console Highlighter",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "My Console Highlighter",
+      "properties": {
+        "myHighlighter.colors": {
+          "type": "object",
+          "properties": {
+            "log": {
+              "type": "string",
+              "default": "rgba(148, 163, 184, 1)",
+              "description": "Color for console.log"
+            },
+            "info": {
+              "type": "string",
+              "default": "rgba(56, 189, 248, 1)",
+              "description": "Color for console.info"
+            },
+            "warn": {
+              "type": "string",
+              "default": "rgba(251, 191, 36, 1)",
+              "description": "Color for console.warn"
+            },
+            "error": {
+              "type": "string",
+              "default": "rgba(248, 113, 113, 1)",
+              "description": "Color for console.error"
+            },
+            "debug": {
+              "type": "string",
+              "default": "rgba(167, 139, 250, 1)",
+              "description": "Color for console.debug"
+            }
+          },
+          "default": {
+            "log": "rgba(148, 163, 184, 1)",
+            "info": "rgba(56, 189, 248, 1)",
+            "warn": "rgba(251, 191, 36, 1)",
+            "error": "rgba(248, 113, 113, 1)",
+            "debug": "rgba(167, 139, 250, 1)"
+          },
+          "description": "Colors for different console methods"
+        },
+        "myHighlighter.enableBorder": {
+          "type": "boolean",
+          "default": false,
+          "description": "Add a border around highlighted console statements"
+        }
+      }
+    }
+  }
+}
