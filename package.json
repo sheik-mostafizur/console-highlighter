@@ -9,6 +9,7 @@
     "email": "sheikmostafizur2001@gmail.com"
   },
   "license": "MIT",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/sheik-mostafizur/console-highlighter"
