@@ -2,6 +2,13 @@
 
 All notable changes to the "console-highlighter" extension will be documented in this file.
 
+## [0.0.2] - 2026-04-16
+
+### Added
+
+- Support for `console.dir` with slate color highlighting
+- Neon green default color for `console.log`
+
 ## [0.0.1] - 2026-04-15
 
 ### Added

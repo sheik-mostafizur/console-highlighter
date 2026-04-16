@@ -2,7 +2,7 @@
   "name": "console-highlighter",
   "displayName": "Console Highlighter",
   "description": "Highlight console.log, console.error, console.warn, console.info, and console.debug statements with different colors",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sheik-mostafizur",
   "author": {
     "name": "Sheik Mostafizur",
@@ -52,7 +52,7 @@
           "properties": {
             "log": {
               "type": "string",
-              "default": "rgba(148, 163, 184, 1)",
+              "default": "rgba(0, 255, 106, 1)",
               "description": "Color for console.log"
             },
             "info": {
@@ -74,14 +74,20 @@
               "type": "string",
               "default": "rgba(167, 139, 250, 1)",
               "description": "Color for console.debug"
+            },
+            "dir": {
+              "type": "string",
+              "default": "rgba(148, 163, 184, 1)",
+              "description": "Color for console.dir"
             }
           },
           "default": {
-            "log": "rgba(148, 163, 184, 1)",
+            "log": "rgba(0, 255, 106, 1)",
             "info": "rgba(56, 189, 248, 1)",
             "warn": "rgba(251, 191, 36, 1)",
             "error": "rgba(248, 113, 113, 1)",
-            "debug": "rgba(167, 139, 250, 1)"
+            "debug": "rgba(167, 139, 250, 1)",
+            "dir": "rgba(148, 163, 184, 1)"
           },
           "description": "Colors for different console methods"
         }

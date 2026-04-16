@@ -10,11 +10,12 @@ const SUPPORTED_LANGUAGES = [
 
 // Default colors (fallback if config fails)
 const DEFAULT_COLORS = {
-  log: "rgba(148, 163, 184, 1)", // slate-400
+  log: "rgba(0, 255, 106, 1)", // neon green
   info: "rgba(56, 189, 248, 1)", // sky-400
   warn: "rgba(251, 191, 36, 1)", // amber-400
   error: "rgba(248, 113, 113, 1)", // red-400
   debug: "rgba(167, 139, 250, 1)", // violet-400
+  dir: "rgba(148, 163, 184, 1)", // slate-400
 };
 
 // Store decoration types for each console method
@@ -22,13 +23,14 @@ let decorationTypes = {};
 
 function getConsoleColors() {
   const config = vscode.workspace.getConfiguration();
-  const colors = config.get("myHighlighter.colors", DEFAULT_COLORS);
+  // FIXED: Changed from "myHighlighter.colors" to "consoleHighlighter.colors"
+  const colors = config.get("consoleHighlighter.colors", DEFAULT_COLORS);
   return { ...DEFAULT_COLORS, ...colors };
 }
 
 function getBorderStyle() {
   const config = vscode.workspace.getConfiguration();
-  const enableBorder = config.get("myHighlighter.enableBorder", false);
+  const enableBorder = config.get("consoleHighlighter.enableBorder", false);
 
   if (enableBorder) {
     return {
@@ -76,6 +78,11 @@ function createDecorationTypes() {
       color: "inherit",
       ...borderStyle,
     }),
+    dir: vscode.window.createTextEditorDecorationType({
+      backgroundColor: colors.dir,
+      color: "inherit",
+      ...borderStyle,
+    }),
   };
 }
 
@@ -86,7 +93,7 @@ function shouldHighlightDocument(document) {
 // Robust function to find console statements with proper parenthesis matching
 function findConsoleStatements(text) {
   const results = [];
-  const methods = ["log", "info", "warn", "error", "debug"];
+  const methods = ["log", "info", "warn", "error", "debug", "dir"];
   const pattern = new RegExp(`console\\.(${methods.join("|")})\\s*\\(`, "g");
 
   let match;
@@ -140,6 +147,7 @@ function updateDecorations(editor) {
     warn: [],
     error: [],
     debug: [],
+    dir: [],
   };
 
   for (const stmt of statements) {
@@ -206,7 +214,8 @@ function activate(context) {
   // Handle configuration changes
   vscode.workspace.onDidChangeConfiguration(
     (event) => {
-      if (event.affectsConfiguration("myHighlighter")) {
+      // FIXED: Changed from "myHighlighter" to "consoleHighlighter"
+      if (event.affectsConfiguration("consoleHighlighter")) {
         // Recreate decoration types with new colors
         createDecorationTypes();
         const editor = vscode.window.activeTextEditor;
@@ -225,8 +234,9 @@ function activate(context) {
     100,
   );
   statusBarItem.text = "$(symbol-color) Console HL";
+  // FIXED: Updated tooltip to include dir
   statusBarItem.tooltip =
-    "Console Highlighter Active - Different colors for log/info/warn/error/debug";
+    "Console Highlighter Active - Different colors for log/info/warn/error/debug/dir";
   statusBarItem.show();
 
   // Update status bar when switching files
@@ -242,8 +252,9 @@ function activate(context) {
 
   context.subscriptions.push(statusBarItem);
 
+  // FIXED: Updated console log to include dir
   console.log("My Console Highlighter activated with multiple colors!");
-  console.log("Supported methods: log, info, warn, error, debug");
+  console.log("Supported methods: log, info, warn, error, debug, dir");
 }
 
 function deactivate() {

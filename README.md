@@ -17,13 +17,14 @@ A VS Code extension that highlights console statements with different colors for
 
 ## Supported Console Methods
 
-| Method          | Default Color                    | Preview |
-| --------------- | -------------------------------- | ------- |
-| `console.log`   | Slate (rgba(148, 163, 184, 1))   | 🎨      |
-| `console.info`  | Sky Blue (rgba(56, 189, 248, 1)) | 🎨      |
-| `console.warn`  | Amber (rgba(251, 191, 36, 1))    | 🎨      |
-| `console.error` | Red (rgba(248, 113, 113, 1))     | 🎨      |
-| `console.debug` | Violet (rgba(167, 139, 250, 1))  | 🎨      |
+| Method          | Default Color                     |
+| --------------- | --------------------------------- |
+| `console.log`   | neon green (rgba(0, 255, 106, 1)) |
+| `console.info`  | Sky Blue (rgba(56, 189, 248, 1))  |
+| `console.warn`  | Amber (rgba(251, 191, 36, 1))     |
+| `console.error` | Red (rgba(248, 113, 113, 1))      |
+| `console.debug` | Violet (rgba(167, 139, 250, 1))   |
+| `console.dir`   | Slate (rgba(148, 163, 184, 1))    |
 
 ## Installation
 
@@ -45,5 +46,5 @@ A VS Code extension that highlights console statements with different colors for
 Download the `.vsix` file from [GitHub Releases](https://github.com/sheik-mostafizur/console-highlighter/releases) and run:
 
 ```bash
-code --install-console-highlighter-0.0.1.vsix
+code --install-console-highlighter-0.0.2.vsix
 ```
