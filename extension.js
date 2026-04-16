@@ -10,7 +10,7 @@ const SUPPORTED_LANGUAGES = [
 
 // Default colors (fallback if config fails)
 const DEFAULT_COLORS = {
-  log: "rgba(0, 255, 106, 1)", // neon green
+  log: "rgba(0, 255, 106, 0.8)", // neon green
   info: "rgba(56, 189, 248, 1)", // sky-400
   warn: "rgba(251, 191, 36, 1)", // amber-400
   error: "rgba(248, 113, 113, 1)", // red-400
@@ -233,7 +233,7 @@ function activate(context) {
     vscode.StatusBarAlignment.Right,
     100,
   );
-  statusBarItem.text = "$(symbol-color) Console HL";
+  statusBarItem.text = "CH";
   // FIXED: Updated tooltip to include dir
   statusBarItem.tooltip =
     "Console Highlighter Active - Different colors for log/info/warn/error/debug/dir";
@@ -242,10 +242,10 @@ function activate(context) {
   // Update status bar when switching files
   vscode.window.onDidChangeActiveTextEditor((editor) => {
     if (editor && shouldHighlightDocument(editor.document)) {
-      statusBarItem.text = `$(symbol-color) Console HL (${editor.document.languageId})`;
+      statusBarItem.text = `CH`;
       statusBarItem.tooltip = `Highlighting ${editor.document.languageId} files with multiple colors`;
     } else if (editor) {
-      statusBarItem.text = `$(symbol-color) Console HL (inactive)`;
+      statusBarItem.text = `CH ×`;
       statusBarItem.tooltip = `No support for ${editor.document.languageId}`;
     }
   });

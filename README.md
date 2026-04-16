@@ -17,14 +17,14 @@ A VS Code extension that highlights console statements with different colors for
 
 ## Supported Console Methods
 
-| Method          | Default Color                     |
-| --------------- | --------------------------------- |
-| `console.log`   | neon green (rgba(0, 255, 106, 1)) |
-| `console.info`  | Sky Blue (rgba(56, 189, 248, 1))  |
-| `console.warn`  | Amber (rgba(251, 191, 36, 1))     |
-| `console.error` | Red (rgba(248, 113, 113, 1))      |
-| `console.debug` | Violet (rgba(167, 139, 250, 1))   |
-| `console.dir`   | Slate (rgba(148, 163, 184, 1))    |
+| Method          | Default Color                       |
+| --------------- | ----------------------------------- |
+| `console.log`   | neon green (rgba(0, 255, 106, 0.8)) |
+| `console.info`  | Sky Blue (rgba(56, 189, 248, 1))    |
+| `console.warn`  | Amber (rgba(251, 191, 36, 1))       |
+| `console.error` | Red (rgba(248, 113, 113, 1))        |
+| `console.debug` | Violet (rgba(167, 139, 250, 1))     |
+| `console.dir`   | Slate (rgba(148, 163, 184, 1))      |
 
 ## Installation
 
