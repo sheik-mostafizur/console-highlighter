@@ -10,7 +10,7 @@ const SUPPORTED_LANGUAGES = [
 
 // Default colors (fallback if config fails)
 const DEFAULT_COLORS = {
-  log: "rgba(0, 255, 106, 0.8)", // neon green
+  log: "rgba(0, 255, 106, 0.6)", // neon green
   info: "rgba(56, 189, 248, 1)", // sky-400
   warn: "rgba(251, 191, 36, 1)", // amber-400
   error: "rgba(248, 113, 113, 1)", // red-400

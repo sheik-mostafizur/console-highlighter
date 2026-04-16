@@ -2,11 +2,18 @@
 
 All notable changes to the "console-highlighter" extension will be documented in this file.
 
+## [0.1.1] - 2026-04-16
+
+## Changed
+
+- 🟢 Console.log color → Neon Green `rgba(0, 255, 106, 0.6)`
+- 📟 Status bar text → "CH"
+
 ## [0.1.0] - 2026-04-16
 
 ### Changed
 
-- Updated console.log color to neon green `rgba(0, 255, 106, 0.8)` for better visibility
+- Updated console.log color to neon green `rgba(0, 255, 106, 0.6)` for better visibility
 - Simplified status bar text to "CH"
 
 ## [0.0.2] - 2026-04-16
